@@ -1,0 +1,100 @@
+.services {
+    color: $basic-white;
+    padding: 15px 0 60px 0;
+    @include viewport-md {
+        padding: 30px 0 60px 0;
+    }
+
+    &__container {
+    }
+
+    .container {
+    }
+
+    &__link {
+        @include base-link($regular-color);
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: normal;
+        padding-right: 2px;
+        position: relative;
+        cursor: pointer;
+
+        &::after {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-right: 2px solid $regular-color;
+            border-bottom: 2px solid $regular-color;
+            transform: rotate(-45deg);
+            position: absolute;
+            top: 25%;
+            left: 100%;
+            transition: all .2s ease;
+        }
+
+        &:hover::after {
+            border-right: 2px solid $accent-color;
+            border-bottom: 2px solid $accent-color;
+        }
+    }
+
+    &__title { 
+        margin-top: 10px;
+        @include subtitle;
+        @include main-gradient-text;
+
+        @include viewport-md {
+            font-size: 38px;
+        }
+    }
+
+    &__cards {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 60px;
+    }
+
+    &__card {
+        margin-top: 30px;
+
+        @include viewport-md {
+            margin-top: 60px;
+            flex: 1 1 40%;
+        }
+
+        @include viewport-lg {
+            flex: 1 1 25%;
+        }
+    }
+
+    &__icon {
+        display: inline-block;
+        padding: 14px;
+        margin-bottom: 30px;
+        background: $basic-white;
+        border-radius: 24px;
+    }
+
+    &__svg {
+        width: 60px;
+        height: 60px;
+    }
+
+    &__card-link {
+        @include h2;
+        transition: all .2s ease;
+
+        &:hover {
+            color: $accent-color
+        }
+    }
+
+    &__card-text {
+        @include service_text;
+        margin-top: 15px;
+    }
+
+}

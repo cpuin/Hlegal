@@ -1,0 +1,56 @@
+.service_area {
+    padding: 15px 0 60px 0;
+
+    @include viewport-md {
+        padding-top: 30px;
+    }
+
+    &__border {
+        width: 100%;
+        height: 4px;
+        background: rgba(255, 255, 255, 0.50);
+        margin-bottom: 30px;
+    }
+
+    &__title {
+        @include h2($basic-white);
+        margin-bottom: 30px;
+    }
+
+    &__cards {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        @include viewport-md {
+            flex-direction: row;
+            gap: 60px;
+        }
+    }
+
+    &__card1, &__card2 {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        @include service_text(18px);
+    }
+
+    &__card1 {
+        justify-content: space-between;
+    }
+
+    &__card-text {
+        position: relative;
+        margin-left: 14px;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 12px;
+            left: -14px;
+            width: 6px;
+            height: 6px;
+            background: $accent-color;
+            border-radius: $radius-rounded;
+        }
+    }
+}

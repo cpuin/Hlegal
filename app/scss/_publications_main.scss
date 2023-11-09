@@ -1,0 +1,45 @@
+.header {
+
+    &__list-link-blue {
+        display: block;
+		padding-bottom: 3px;
+		@include base-link($regular-color);
+		font-weight: 700;
+		font-size: 24px;
+		padding: 7px 0;
+		background: $bg-color;
+		text-align: center;
+
+		&:hover {
+			color: $accent-color;
+		}
+
+		&.active {
+			color: $accent-color;
+			border-color: $accent-color;
+		}
+
+		@include viewport-md {
+			border-bottom: 2px solid transparent;
+			@include base-link($regular-color);
+			font-size: 16px;
+			padding: 0;
+			background: none;
+			&:hover {
+				border-bottom: 2px solid $regular-color;
+                color: $regular-color;
+			}
+
+			&.active {
+				color: $accent-color;
+				border-color: $accent-color;
+			}
+		}
+	}
+}
+
+.publications_btn {
+	display: flex;
+	justify-content: center;
+	margin-top: 30px;
+}

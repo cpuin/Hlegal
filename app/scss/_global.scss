@@ -1,0 +1,163 @@
+body {
+	font-family: 'Montserrat';
+	font-weight: 400;
+}
+
+.wrapper {
+	background: $gradient-supersoft;
+	border-radius: 0px 0px 12px 12px;
+	position: relative;
+
+	&--gray {
+		background: $basic-white;
+	}
+
+	&__shadow {
+		@include shadow;
+	}
+
+	&__subshadow {
+		@include subshadow;
+	}
+
+}
+
+.container {
+	padding: 0 30px;
+	// від 0 до бескінечності
+
+	@include viewport-md {
+		// від 768 >
+		max-width: 708px;
+		margin: 0 auto;
+	}
+
+	@include viewport-lg {
+		// від 1024 >
+		max-width: 964px;
+	}
+
+	@include viewport-xl {
+		// від 1440 >
+		max-width: 1380px;
+	}
+
+	// @include viewport-xll {
+	// 	max-width: 1660px;
+	// } буде однаковий з кодом нижче
+
+	@media screen and (min-width: $breakpoint-xxl) {
+		// від 1920 >
+		max-width: 1660px;
+	}
+}
+
+.hidden {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.main-title {
+	@include title;
+}
+
+.dotted {
+	display: none;
+	@include viewport-md {
+		display: inline-block;
+		width: 6px;
+		height: 6px;
+		border-radius: $radius-rounded;
+		background: $basic-white;
+
+		&--gray {
+			background: $separator-color;
+		}
+	}
+}
+
+.btn {
+	background: $regular-color;
+	border-radius: $radius-md;
+	box-shadow: 0 0 20px 0 rgba(36, 163, 255, 0.50);
+	padding: 18px 30px;
+	text-align: center;
+	font-size: 16px;
+	font-weight: 700;
+	color: $basic-white;
+	cursor: pointer;
+	transition: all .2s ease;
+
+	&:hover {
+		background: $hover-coolor;
+	}
+
+	&:active {
+		background: $active-color;
+	}
+}
+
+.span_logo {
+	color: $basic-white;
+	font-size: 20px;
+	font-weight: 400;
+
+	&--gray {
+		color: $main-color;
+	}
+
+	@include viewport-md {
+		font-size: 36px;
+	}
+}
+
+.switch {
+	margin: 0 auto 30px auto;
+	width: 230px;
+	background: $separator-color;
+	border-radius: $radius-md;
+}
+
+.switch input {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+}
+
+.switch input + label {
+	display: flex;
+	cursor: pointer;
+	width: 100%;
+	height: 42px;
+	position: relative;
+}
+
+.switch input + label span {
+	color: $main-color;
+	font-size: 16px;
+	font-weight: 700;
+	position: relative;
+	flex: 1 1 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.switch input + label::before {
+	content: '';
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	width: 50%;
+	height: 38px;
+	border-radius: 10px;
+	background: $basic-white;
+	transition: all .2s ease;
+}
+
+.switch input:checked + label::before {
+	left: calc(50% - 2px);
+}

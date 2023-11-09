@@ -1,0 +1,13 @@
+.service_head {
+	display: flex;
+	flex-flow: column;
+	justify-content: space-between;
+
+    &__header {
+        margin-bottom: 15px;
+
+		@include viewport-md {
+			margin-bottom: 30px;
+		}
+	}
+}

@@ -1,0 +1,6 @@
+.service_head {
+    padding-bottom: 15px;
+    @include viewport-md {
+        padding-bottom: 30px;
+    }
+}
